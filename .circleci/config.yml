@@ -24,4 +24,4 @@
             command: chmod +x scripts/depoly.sh
         - run:
             name: Run Deploy to GithubPages
-            command: ../scripts/deploy.sh
+            command: ../scripts/depoly.sh
