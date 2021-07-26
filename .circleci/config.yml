@@ -2,7 +2,7 @@
   jobs:
     build:
       docker:
-        - image: circle/node:4.1
+        - image: circleci/node:10
       branches:
         only:
           - master
@@ -11,9 +11,24 @@
             fingerprints:
               - "d4:3c:ed:1e:9c:10:03:f7:0d:f3:e8:cb:7e:58:6c:4e"
         - checkout
+        - restore_cache
+            keys:
+              - dependencies
         - run:
             name: Install
             command: yarn install
+        - save_cache
+            paths:
+              - node_modules
+            keys: dependencies
         - run:
             name: Build
             command: yarn build
+        # - run:
+        #     name: Prepare shell commands
+        #     # shell chmod +x 赋予执行权限
+        #     # 执行shell脚本
+        #     command: chomd +x scripts/depoly.sh
+        # - run:
+        #     name: Run Deploy to GithubPages
+        #     command: ./scripts/deploy.sh
