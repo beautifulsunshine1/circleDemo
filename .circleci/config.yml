@@ -17,11 +17,11 @@
         - run:
             name: Build
             command: yarn build
-        # - run:
-        #     name: Prepare shell commands
-        #     # shell chmod +x 赋予执行权限
-        #     # 执行shell脚本
-        #     command: chomd +x scripts/depoly.sh
-        # - run:
-        #     name: Run Deploy to GithubPages
-        #     command: ./scripts/deploy.sh
+        - run:
+            name: Prepare shell commands
+            # shell chmod +x 赋予执行权限
+            # 执行shell脚本
+            command: chomd +x scripts/depoly.sh
+        - run:
+            name: Run Deploy to GithubPages
+            command: ./scripts/deploy.sh
