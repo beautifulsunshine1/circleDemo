@@ -11,9 +11,6 @@
             fingerprints:
               - "d4:3c:ed:1e:9c:10:03:f7:0d:f3:e8:cb:7e:58:6c:4e"
         - checkout
-        - restore_cache
-            keys:
-              - dependencies
         - run:
             name: Install
             command: yarn install
