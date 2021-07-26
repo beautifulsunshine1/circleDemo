@@ -1,9 +1,19 @@
-# This config is equivalent to both the '.circleci/extended/orb-free.yml' and the base '.circleci/config.yml'
-version: 2
-jobs:
-  build:
-    docker:
-      - image: circle/node:10
-    steps:
-      - run: echo 'A first hello'
-      - run: npm -v
+  version: 2
+  jobs:
+    build:
+      docker:
+        - image: circle/node@4.1
+      branches:
+        only:
+          - "master"
+      steps:
+        - add_ssh_keys:
+            fingerprints:
+              - "d4:3c:ed:1e:9c:10:03:f7:0d:f3:e8:cb:7e:58:6c:4e"
+        - checkout
+        - run:
+            name: Install
+            command: yarn install
+        - run:
+            name: Build
+            command: yarn build
