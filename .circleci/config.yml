@@ -2,7 +2,7 @@
   jobs:
     build:
       docker:
-        - image: circle/node:10
+        - image: circle/node:4.1
       branches:
         only:
           - master
