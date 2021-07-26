@@ -14,10 +14,6 @@
         - run:
             name: Install
             command: yarn install
-        - save_cache
-            paths:
-              - node_modules
-            keys: dependencies
         - run:
             name: Build
             command: yarn build
