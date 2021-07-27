@@ -9,7 +9,7 @@
       steps:
         - add_ssh_keys:
             fingerprints:
-              - "d4:3c:ed:1e:9c:10:03:f7:0d:f3:e8:cb:7e:58:6c:4e"
+              - "94:71:d8:02:98:da:7a:62:cf:22:4c:18:4e:1f:9f:d7"
         - checkout
         - run:
             name: Install
